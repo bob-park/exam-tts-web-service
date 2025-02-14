@@ -46,9 +46,12 @@ public class AssetResourceService {
         long rangeLength = 0;
 
         try {
+
             String absolutePath =
                 properties.location().getFile().getAbsolutePath() + File.separatorChar
-                + file.filePath();
+                    + file.filePath();
+
+            resource = new FileSystemResource(absolutePath);
 
             long contentLength = resource.contentLength();
             long chunkSize = DEFAULT_PARTIAL_SIZE.toBytes();
@@ -59,8 +62,6 @@ public class AssetResourceService {
                 end = range.getRangeEnd(contentLength);
                 rangeLength = Math.min(chunkSize, end - start + 1);
             }
-
-            resource = new FileSystemResource(absolutePath);
 
         } catch (IOException e) {
             throw new ServiceRuntimeException(e);
