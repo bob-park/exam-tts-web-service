@@ -73,6 +73,10 @@ eureka:
 malgn:
   enabled: on
 
+## storage
+storage:
+  location: ${storage_location}
+
 ## app
 app:
   login-success-url: ${login_success_url:http://127.0.0.1:3000}
