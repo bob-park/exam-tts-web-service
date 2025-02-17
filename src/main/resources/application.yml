@@ -54,6 +54,8 @@ spring:
             logger-level: basic
           exam-tts-api:
             url: ${exam_tts_api_host:http://localhost:10000}
+          auth-user-api:
+            url: ${auth_user_api_host:http://localhost:8080}
   threads:
     virtual:
       enabled: on
