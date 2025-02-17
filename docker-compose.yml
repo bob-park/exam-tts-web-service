@@ -1,0 +1,10 @@
+services:
+  exam-tts-web-service:
+    container_name: exam-tts-web-service
+    image: ghcr.io/bob-park/exam-tts-web-service
+    build:
+      dockerfile: ./Dockerfile
+      x-bake:
+        platforms:
+          - linux/amd64
+          - linux/arm64
