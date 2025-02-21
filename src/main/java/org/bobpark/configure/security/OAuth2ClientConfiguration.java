@@ -65,8 +65,6 @@ public class OAuth2ClientConfiguration {
                 .invalidateHttpSession(true)
                 .clearAuthentication(true));
 
-        http.csrf(AbstractHttpConfigurer::disable);
-
         return http.build();
     }
 
